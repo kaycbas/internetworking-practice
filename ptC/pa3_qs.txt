@@ -1,0 +1,44 @@
+PA#3
+Kevin Bastoul
+ID: 4393748478
+
+Pt.1
+
+1. 
+"10 packets transmitted, 10 received, 0% loss, time 9018ms
+rtt min/avg/max/mdev = 6.604/9.363/15.411/2.825 ms"
+
+2.
+"10 packets transmitted, 3 received, +13 duplicates, 70% packet loss, time 9049ms
+rtt min/avg/max/mdev = 3667.294/7411.894/11626.385/2341.980 ms, pipe 10"
+
+3. What causes a difference?
+When loops are introduced into the topology, flooding triggers nodes in the loops to repeatedly flood cuases
+the network to overflow and drop packets.
+
+Pt.2
+
+4. It's possible because the algorithm's flood always sends to a switche's host which could then intercept 
+the packets. This could be avoided if each switch kept track of information about it's connected hosts so that
+the hosts wouldn't need to be included in the MST. Then a switch would only forward to a host if it knew the 
+host was a packets destination. 
+
+
+Pt.3
+
+5. 
+I used Kruskal's MST algorithm for my implementation. The algorithm works by initially creating a separate 
+'set' for each node. It then iterates through the graph edges and if an edge connects two distinct sets then 
+it is added to an edge list and the sets are 'unioned' into one. The algorithm is done when all the nodes are
+in one set.
+
+6. 
+Run-time:
+My algorithm is O(m*logn) for some. Making the sets takes O(n) time. I skip the traditional sorting step bc the edges
+aren't weighted. Then there is O(m) find-sets and unions which take log(n) time. So over all the runtime is O(m*logn).
+
+7. 
+An advatage of a centralized algorithm like mine is that there can never be any disagreement among switches as to 
+what the current MST looks like. It is also less susceptible to loops than a distributed approach might be.
+A disadvatage is that there is more configuration computational overhead.
+

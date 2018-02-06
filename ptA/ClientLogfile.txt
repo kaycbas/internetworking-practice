@@ -1,0 +1,3 @@
+connecting to server 127.0.0.1 at port 8888
+sending register message client0
+received welcome

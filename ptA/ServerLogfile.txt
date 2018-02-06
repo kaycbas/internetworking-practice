@@ -1,0 +1,7 @@
+server started on 0.0.0.0 at port 8888
+client connection from host 127.0.0.1 at port 8888
+received register client 1 from host 127.0.0.1 port 62427
+client connection from host 127.0.0.1 at port 8888
+received register client 2 from host 127.0.0.1 port 62440
+sendto client2 from client#" hey"
+sendto client1 from client#" hey"
